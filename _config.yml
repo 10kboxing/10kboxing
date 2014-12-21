@@ -1,4 +1,4 @@
-title: 'Brighton Japan Festival'
+title: '10K Boxing'
 permalink: none
 url: 'http://beta.abemedia.co.uk/badymanagement/'
 timezone: Europe/London
@@ -51,7 +51,7 @@ collections:
         output: true
     gallery:
         output: true
-description: 'Brighton Japan Festival'
+description: '10K Boxing'
 relative_permalinks: 'false'
 v: 1
 baseurl: /
