@@ -1,6 +1,6 @@
 title: '10K Boxing'
 permalink: none
-url: 'http://beta.abemedia.co.uk/badymanagement/'
+url: 'http://beta.abemedia.co.uk/badymanagement'
 timezone: Europe/London
 exclude:
     - Gemfile

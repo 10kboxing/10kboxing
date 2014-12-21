@@ -4,12 +4,16 @@ layout: default
 {% assign team = (site.team | where: 'published', 1 | sort: 'order') %}
 {% include modules/carousel.html category=team %}
 
-  <div class="section" id="content">
-    <div class="container">
-      <h1 class="page-header">{{ page.title }}</h1>
-      <p class="lead">{{ content | strip_html | newline_to_br }}</p>
+    <div class="section" id="content">
+      <div class="container">
+        <h1 class="page-header">{{ page.title }}</h1>
+        <p class="lead">{{ content | strip_html | newline_to_br }}</p>
+      </div>
     </div>
-  </div>
+    {% assign pages = (site.content | where: 'published', 1 | sort: 'order') %}
+    {% for item in pages %}
+     {{ item.content }}
+    {% endfor %}
   
     <div class="row equal">
     {% for item in team %}
