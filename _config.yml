@@ -1,6 +1,6 @@
 title: 'Brighton Japan Festival'
 permalink: none
-url: 'http://beta.abemedia.co.uk/brightonjapan'
+url: 'http://beta.abemedia.co.uk/badymanagement'
 timezone: Europe/London
 exclude:
     - Gemfile
@@ -59,20 +59,11 @@ collections:
     content:
         output: true
         permalink: ':path.html'
-    events:
-        output: true
-    venues:
+    team:
         output: true
     gallery:
-    albums:
         output: true
-        permalink: 'photos/:path.html'
-    sponsors:
-    contacts:
 description: 'Brighton Japan Festival'
 relative_permalinks: 'false'
-recaptcha_public_key: 6Lf15v0SAAAAAMReHqDCinChFIhv-Ve66By0f90D
-comments:
-    provider: '1'
-v: 10
+v: 1
 baseurl: /
