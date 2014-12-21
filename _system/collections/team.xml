@@ -6,9 +6,9 @@
             <field name="kos" type="number" label="Wins by KO" filter="int" class="form-control" />
             <field name="losses" type="number" label="Losses" filter="int" class="form-control" />
             <field name="draws" type="number" label="Draws" filter="int" class="form-control" />
-            <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
         </fieldset>
         <fieldset name="profile">
+            <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
             <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
             <field name="nationality" type="text" label="Nationality" filter="string" class="form-control" />
             <field name="birthday" type="date" label="Birthday" filter="string" class="form-control" />

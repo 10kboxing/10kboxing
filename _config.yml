@@ -40,19 +40,7 @@ defaults:
     -
         scope:
             path: ''
-            type: areas
-        values:
-            layout: area
-    -
-        scope:
-            path: ''
-            type: events
-        values:
-            layout: event
-    -
-        scope:
-            path: ''
-            type: albums
+            type: gallery
         values:
             layout: gallery
 collections:
