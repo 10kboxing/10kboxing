@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-{% include modules/carousel.html category=site.events parent="" %}
+{% assign team = (site.team | where: 'published', 1 | sort: 'order') %}
+{% include modules/carousel.html category=team %}
 
   <div class="section" id="content">
     <div class="container">
@@ -10,7 +11,6 @@ layout: default
     </div>
   </div>
   
-  {% assign team = (site.team | where: 'published', 1 | sort: 'order') %}
     <div class="row equal">
     {% for item in team %}
     <div class="col-sm-6 col-md-4"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
