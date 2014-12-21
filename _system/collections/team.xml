@@ -11,6 +11,10 @@
             <field name="coach" type="text" label="Coach" filter="string" class="form-control" />
             <field name="inspiration" type="text" label="Inspiration" filter="string" class="form-control" />
             <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
+            <field name="height" type="text" label="Height" filter="int" class="form-control" />
+            <field name="wins" type="text" label="Wins" filter="int" class="form-control" />
+            <field name="losses" type="text" label="Losses" filter="int" class="form-control" />
+            <field name="draws" type="text" label="Draws" filter="int" class="form-control" />
         </fieldset>
     </fields>
 </form>
