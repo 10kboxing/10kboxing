@@ -10,18 +10,14 @@ layout: default
     </div>
   </div>
   
-  <div class="black section bg-pattern-1">
-    <div class="container">
-      <a href="{{ site.url }}tickets.html" class="btn btn-danger btn-lg pull-right">Buy Tickets</a>
-      <div class="datebox pull-right" id="countdown" data-date="{{ page.countdown | date: "%Y-%m-%d"}}"></div>
-      <span class="text-lg">{{ page.festival_date }}</span>
-    </div>
+  {% assign team = (site.team | where: 'published', 1 | sort: 'order') %}
+    <div class="row equal">
+    {% for item in team %}
+    <div class="col-sm-6 col-md-4"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
+    <figure>
+      <div class="thumb-square img img-circle img-thumbnail" style="background-image: url({{ site.cdn | replace: '0x0', '300x300'}}/{{ item.image }})"></div>
+    </figure>
+    {% if item.title %}<h3>{{ item.title }} {% if item.start_date %}<small>{{ item.start_date | date_to_string }}</small>{% endif %}</h3>{% endif %}
+    {% if item.content %}<p>{{ item.content | strip_html | truncatewords:20 }}</p>{% endif %}
+    </a><br></div>{% endfor %}
   </div>
-  {% assign events = (site.events | where: 'parent', nil | where: 'published', 1 | sort: 'start_date') %}
-  {% include module module="gallery" class="grey" title="Events" items=events %} 
-  
-  {% assign areas = (site.venues | where: 'published', 1 | sort: 'order') %}
-  {% include module module="gallery" class="red bg-pattern-1" title="Areas" items=areas %}
-  
-  {% assign sponsors = (site.sponsors | where: 'published', 1 | sort: 'order') %}
-  {% include module module="sponsors" title="Sponsors" items=sponsors %}
