@@ -1,0 +1,40 @@
+---
+layout: default
+---
+  <div class="banner" {% if page.image %}style="background-image: url(http://cdn.donlabs.com/1280x400/brightonjapan/{{ page.image }})"{% endif %}>
+    <div class="container rel fh">
+      <div class="banner-text">
+        {% if page.start_date %}
+        <div class="box box-white h3"><i class="fa fa-calendar"></i> {{ page.start_date | date: '%A, %d %B' }}</div>
+        <div class="box box-white h3"><i class="fa fa-clock-o"></i>
+          {% capture minutes %}{{ page.start_date | date: '%M' }}{% endcapture %}
+          {{ page.start_date | date: '%-I' }}{% unless minutes == '00' %}:{{ minutes }}{% endunless %}
+          {{ page.start_date | date: '%p' }}
+        </div>
+        {% endif %}
+        <h1 class="box">{{ page.title }}</h1>
+      </div>
+      <div class="banner-text right">
+        {% if page.price %}
+          <div class="box box-white h3">&pound;{{ page.price }}</div>
+          {% if page.ticket %}<a target="_blank" href="{{ page.ticket }}" class="box box-red h3"><i class="fa fa-shopping-cart"></i> Buy Tickets</a>{% endif %}
+        {% else %}
+          <div class="box box-red h3 circle">Free</div>
+        {% endif %}
+      </div>
+      
+    </div>
+  </div>
+  
+<div class="grey"><div class="container">{% include system/sharing %}</div></div>
+<div class="section" id="content">
+  <div class="container"> 
+    {{ content }}
+  </div>
+</div>
+{% assign items = (site[page.collection] | where: 'parent', page.slug | where: 'published', 1 | sort: 'start_date') %}
+{% assign count = (items | size) %}
+{% if count > 0 %}
+  {% capture title %}Events at {{ page.title }}{% endcapture %}
+  {% include module module="gallery" class="black" title=title items=items %} 
+{% endif %}

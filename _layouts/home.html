@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% include modules/carousel.html category=site.events parent="" %}
+
+  <div class="section" id="content">
+    <div class="container">
+      <h1 class="page-header">{{ page.title }}</h1>
+      <p class="lead">{{ content | strip_html | newline_to_br }}</p>
+    </div>
+  </div>
+  
+  <div class="black section bg-pattern-1">
+    <div class="container">
+      <a href="{{ site.url }}tickets.html" class="btn btn-danger btn-lg pull-right">Buy Tickets</a>
+      <div class="datebox pull-right" id="countdown" data-date="{{ page.countdown | date: "%Y-%m-%d"}}"></div>
+      <span class="text-lg">{{ page.festival_date }}</span>
+    </div>
+  </div>
+  {% assign events = (site.events | where: 'parent', nil | where: 'published', 1 | sort: 'start_date') %}
+  {% include module module="gallery" class="grey" title="Events" items=events %} 
+  
+  {% assign areas = (site.venues | where: 'published', 1 | sort: 'order') %}
+  {% include module module="gallery" class="red bg-pattern-1" title="Areas" items=areas %}
+  
+  {% assign sponsors = (site.sponsors | where: 'published', 1 | sort: 'order') %}
+  {% include module module="sponsors" title="Sponsors" items=sponsors %}

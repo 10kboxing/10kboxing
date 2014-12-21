@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields>
+        <fieldset name="options">
+            <field name="category" type="list" label="Category" filter="string" class="form-control" required="true">
+                <option value="videos">Videos</option>
+                <option value="photos">Photos</option>
+            </field>
+            <field name="image" type="media" label="Cover Image" filter="string" class="form-control" />
+            <field name="youtube" type="url" label="YouTube Link" filter="string" class="form-control" />
+            <field name="directory" type="folderlist" label="Media Directory" filter="string" class="form-control" directory="images" />
+        </fieldset>
+    </fields>
+</form>

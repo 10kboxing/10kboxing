@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields>
+        <fieldset name="options">
+            <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
+        </fieldset>
+        <fieldset name="profile">
+            <field name="nationality" type="text" label="Nationality" filter="string" class="form-control" />
+            <field name="birthday" type="text" label="Birthday" filter="string" class="form-control" />
+            <field name="hometown" type="text" label="Hhometown" filter="string" class="form-control" />
+            <field name="coach" type="text" label="Coach" filter="string" class="form-control" />
+            <field name="inspiration" type="text" label="Inspiration" filter="string" class="form-control" />
+            <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
+        </fieldset>
+    </fields>
+</form>

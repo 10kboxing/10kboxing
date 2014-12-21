@@ -1,0 +1,43 @@
+  <div id="carousel" class="carousel slide fh" data-ride="carousel">
+  <!-- Indicators -->
+    <div class="container rel">
+      <ol class="carousel-indicators">
+        {% capture i %}0{% endcapture %}
+        {% for item in include.category %}
+        {% if page.carousel contains item.slug %}
+        <li data-target="#carousel" data-slide-to="{{i}}" class="{% if {{i}} == '0' %}active{% endif %}"></li>
+        {% capture i %}{{ i | plus:1 }}{% endcapture %}
+        {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner fh">
+      {% capture i %}0{% endcapture %}
+      {% for item in include.category %}
+      {% if page.carousel contains item.slug %}
+      <div class="item fh {% if {{i}} == '0' %}active{% endif %}">
+        <div class="banner" style="background-image:url(http://cdn.donlabs.com/1280x720/brightonjapan/{{ item.image }})"></div>
+        <div class="container">
+        <h3 class="box">{{ item.title }}</h3>
+        <p class="box">{{ item.content | strip_html | truncatewords:20 }}</p>
+        <a class="h4 box box-red" href="{{ site.url }}{{ item.url }}">Read More</a>
+        </div>
+      </div>
+      {% capture i %}{{ i | plus:1 }}{% endcapture %}
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+    <a class="arrow-down" href="#logo">
+      <span class="glyphicon glyphicon-chevron-down"></span>
+    </a>
+  </div>

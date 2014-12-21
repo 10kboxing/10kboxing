@@ -1,0 +1,78 @@
+title: 'Brighton Japan Festival'
+permalink: none
+url: 'http://beta.abemedia.co.uk/brightonjapan'
+timezone: Europe/London
+exclude:
+    - Gemfile
+    - Gemfile.lock
+analytics:
+    provider: google_analytics
+sharing:
+    provider:
+        - facebook
+        - twitter
+        - google
+        - linkedin
+        - pinterest
+        - stumbleupon
+    limit: '3'
+profiles:
+    provider:
+        - facebook
+        - twitter
+        - pinterest
+    facebook: 'https://facebook.com/brightonjapanfestival'
+    twitter: 'https://twitter.com/brightonjapan15'
+    pinterest: 'https://pinterest.com/brightonjapan'
+defaults:
+    -
+        scope:
+            path: ''
+            type: posts
+        values:
+            layout: page
+    -
+        scope:
+            path: ''
+            type: pages
+        values:
+            layout: page
+    -
+        scope:
+            path: ''
+            type: areas
+        values:
+            layout: area
+    -
+        scope:
+            path: ''
+            type: events
+        values:
+            layout: event
+    -
+        scope:
+            path: ''
+            type: albums
+        values:
+            layout: gallery
+collections:
+    content:
+        output: true
+        permalink: ':path.html'
+    events:
+        output: true
+    venues:
+        output: true
+    gallery:
+    albums:
+        output: true
+        permalink: 'photos/:path.html'
+    sponsors:
+    contacts:
+description: 'Brighton Japan Festival'
+relative_permalinks: 'false'
+recaptcha_public_key: 6Lf15v0SAAAAAMReHqDCinChFIhv-Ve66By0f90D
+comments:
+    provider: '1'
+v: 10
+baseurl: /
