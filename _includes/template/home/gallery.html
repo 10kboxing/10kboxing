@@ -20,7 +20,7 @@
       {% endif %}
       <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ url }}" >
         <figure>
-          <img class="img-responsive" src="{{ thumb }}"/>
+          <div class="thumb-wide img" style="background-image: url({{ thumb }})"></div>
         </figure>
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
       </a><br></div>
