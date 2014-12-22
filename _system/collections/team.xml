@@ -18,5 +18,11 @@
             <field name="height" type="text" label="Height" filter="int" class="form-control" />
             <field name="stance" type="text" label="Stance" filter="string" class="form-control" />
         </fieldset>
+        <fieldset name="social">
+            <field name="facebook" label="Facebook" type="text" filter="string" class="form-control" />
+            <field name="twitter" label="Twitter" type="text" filter="string" class="form-control" />
+            <field name="instagram" label="Instagram" type="text" filter="string" class="form-control" />
+            <field name="youtube" label="Youtube" type="text" filter="string" class="form-control" />
+        </fieldset>
     </fields>
 </form>
