@@ -36,7 +36,7 @@ layout: default
     {% for item in gallery %}
     <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
     <figure>
-      <div class="thumb-square img img-thumbnail" style="background-image: url({{ site.cdn | replace: '0x0', '300x300'}}{{ item.image }})"></div>
+      <img src="{{ site.cdn | replace: '0x0', '300x300'}}{{ item.image }}"/>
     </figure>
     {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
     </a><br></div>
