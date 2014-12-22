@@ -271,18 +271,6 @@ a.thumb, a.thumb:hover {
     margin: 0;
     background: #fff;
 }
-.thumb:hover figure::before{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -50px;
-    background: #900;
-    content: "";
-    border-radius: 50%;
-}
 .thumb figure * {
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
