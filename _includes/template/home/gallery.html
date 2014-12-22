@@ -6,7 +6,7 @@
       {% for item in gallery %}
       <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
         <figure>
-          <img src="{{ site.cdn | replace: '0x0', '300x300'}}{{ item.image }}"/>
+          <img src="{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}"/>
         </figure>
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
       </a><br></div>
