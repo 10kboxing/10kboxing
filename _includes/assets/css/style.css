@@ -252,18 +252,8 @@ a.thumb, a.thumb:hover {
     text-decoration:none;
     cursor: pointer;
 }
-.thumb h3 {
-    float:left;
-}
-.thumb:hover h3 {
-    border-bottom: 3px solid #c00;
-    margin-bottom: 7px;
-}
 .red .thumb:hover h3 {
     border-bottom: 3px solid #000;
-}
-.thumb p {
-    clear: both;
 }
 .thumb figure {
     position: relative;
