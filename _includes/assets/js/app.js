@@ -40,10 +40,13 @@ $(window).scroll(function(){
 $(function() {
     $('#nav').affix({
         offset: {
-            top: $('#nav').offset().top
+            top: (function() {
+                return $('#nav').offset().top
+            })
         }
     }); 
 });
+$('#nav').data('bs.affix').options.offset = newOffset
 
 // equal heights
 function equalHeights() {
