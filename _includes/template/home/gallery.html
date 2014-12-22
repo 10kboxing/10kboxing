@@ -5,6 +5,9 @@
     <div class="row equal">
       {% for item in gallery %}
       <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
+      {{ item | <object data="jsonify" type="">
+          
+      </object> }}
         <figure>
           <img class="img-responsive" src="{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}"/>
         </figure>

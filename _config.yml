@@ -43,6 +43,12 @@ defaults:
             type: gallery
         values:
             layout: gallery
+    -
+        scope:
+            path: ''
+            type: team
+        values:
+            layout: page
 collections:
     content:
         output: true
