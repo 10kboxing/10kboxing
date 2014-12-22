@@ -1,6 +1,6 @@
 <div class="section" id="gallery">
   <div class="container">
-  <h3>Gallery</h3>
+    <h3 class="h2 page-header">{{ section.title }}</h3>
   {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}
     <div class="row equal">
       {% for item in gallery %}
