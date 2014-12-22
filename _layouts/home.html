@@ -11,20 +11,21 @@ layout: default
       </div>
     </div>
   
-    <div class="row equal">
+  <div class="row equal">
     {% for item in team %}
     <div class="col-sm-6 col-md-4"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
     <figure>
-      <div class="thumb-square img img-circle img-thumbnail" style="background-image: url({{ site.cdn | replace: '0x0', '300x300'}}/{{ item.image }})"></div>
+      <div class="thumb-square img img-circle img-thumbnail" style="background-image: url({{ site.cdn | replace: '0x0', '300x300'}}{{ item.image }})"></div>
     </figure>
     {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
     <p>aka<br>{{ item.aka }}</p>
     <p>{{ item.wins }}-{{ item.losses }}-{{ item.draws }} ({{ item.kos }} KOs)</p>
     </a><br></div>
     {% endfor %}
+  </div>
   
-    {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}
-    <div class="row equal">
+  {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}
+  <div class="row equal">
     {% for item in gallery %}
     <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
     <figure>
@@ -33,6 +34,7 @@ layout: default
     {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
     </a><br></div>
     {% endfor %}
+  </div>
   
     <div class="row equal">
     {% for item in site.pages %}
