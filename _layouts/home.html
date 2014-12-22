@@ -15,7 +15,7 @@ layout: default
   <div class="container">
     <div class="row equal">
       {% for item in team %}
-      <div class="col-sm-6 col-md-4"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
+      <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
         <figure class="img-circle img-thumbnail">
           <div class="thumb-square img" style="background-image: url({{ site.cdn | replace: '0x0', '300x300'}}{{ item.avatar }})"></div>
         </figure>
