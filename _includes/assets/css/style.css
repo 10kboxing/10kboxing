@@ -5,7 +5,7 @@ body {
     position: relative;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .datebox span, .text-lg {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Oswald, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     color: #000;
@@ -64,7 +64,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     background-color: #000;
 }
 .navbar-inverse .navbar-nav>li>a {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Oswald, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     color:#fff;
@@ -196,7 +196,7 @@ body>footer a {
 }
 
 .btn {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Oswald, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     border-radius: 0;
