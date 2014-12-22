@@ -36,13 +36,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .datebox span, .text-lg {
     margin-top:0;
 }
 a {
-    color: #900;
+    color: #03c;
 }
 a:hover, a:focus {
-    color: #f00;
+    color: #06f;
 }
 a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
-    border-color: #f00;
+    border-color: #06f;
 }
 .navbar{
     width:100%;
@@ -121,7 +121,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
         margin-right: 0;
     }
     .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-        color: #f00 !important;
+        color: #06f !important;
         background-color: transparent;
     }
     .navbar-inverse {
@@ -202,8 +202,8 @@ body>footer a {
     border-radius: 0;
 }
 .btn-danger {
-    background-color: #900;
-    border-color: #900;
+    background-color: #03c;
+    border-color: #03c;
 }
 .btn-danger:hover {
     background-color: #c00;
@@ -330,7 +330,7 @@ a.thumb, a.thumb:hover {
     margin-top: 2px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 16px;
-    background: #900;
+    background: #03c;
     color: #fff;
 }
 .section {
@@ -345,7 +345,7 @@ a.thumb, a.thumb:hover {
     background-color: #f0f0f0;
 }
 .red {
-    background-color: #900;
+    background-color: #03c;
 }
 .black {
     background-color: #161616;
@@ -354,7 +354,7 @@ a.thumb, a.thumb:hover {
     color: #fff;
 }
 .text-danger {
-    color: #f00;
+    color: #06f;
 }
 .rel {
     position: relative;
