@@ -4,10 +4,8 @@
       <ol class="carousel-indicators">
         {% capture i %}0{% endcapture %}
         {% for item in include.category %}
-        {% if page.carousel contains item.slug %}
         <li data-target="#carousel" data-slide-to="{{i}}" class="{% if {{i}} == '0' %}active{% endif %}"></li>
         {% capture i %}{{ i | plus:1 }}{% endcapture %}
-        {% endif %}
         {% endfor %}
       </ol>
     </div>
@@ -16,7 +14,6 @@
     <div class="carousel-inner fh">
       {% capture i %}0{% endcapture %}
       {% for item in include.category %}
-      {% if page.carousel contains item.slug %}
       <div class="item fh {% if {{i}} == '0' %}active{% endif %}">
         <div class="banner" style="background-image:url(http://cdn.donlabs.com/1280x720/brightonjapan/{{ item.image }})"></div>
         <div class="container">
@@ -26,7 +23,6 @@
         </div>
       </div>
       {% capture i %}{{ i | plus:1 }}{% endcapture %}
-      {% endif %}
       {% endfor %}
     </div>
 
