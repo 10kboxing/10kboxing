@@ -15,7 +15,7 @@
       {% capture i %}0{% endcapture %}
       {% for item in include.category %}
       <div class="item fh {% if {{i}} == '0' %}active{% endif %}">
-        <div class="banner" style="background-image:url({{ site.cdn | replace: '0x0', '1280x720'}}{{ item.image }})"></div>
+        <div class="banner" style="background-image:url({{ site.cdn | replace: '0x0', '1280x720'}}{{ item.image }})" data-parallax="scroll" data-image-src="{{ site.cdn | replace: '0x0', '1280x720'}}{{ item.image }}"></div>
       </div>
       {% capture i %}{{ i | plus:1 }}{% endcapture %}
       {% endfor %}

@@ -1,4 +1,4 @@
-  <div class="banner" {% if page.image %}style="background-image: url(http://cdn.donlabs.com/1280x400/brightonjapan/{{ page.image }})"{% endif %}>
+  <div class="banner" {% if page.image %}style="background-image: url({{ site.cdn | replace: '0x0', '1280x400'}}{{ page.image }})"{% endif %} data-parallax="scroll" data-image-src="{{ site.cdn | replace: '0x0', '1280x400'}}{{ page.image }}">
     <div class="container">
       <div class="banner-text">
         <h1 class="box">{{ page.title }}</h1>
