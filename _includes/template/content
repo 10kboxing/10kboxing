@@ -1,0 +1,6 @@
+{% assign para = (content | split: '<p>') %}
+{{para|jsonify}}
+{% assign lead = (para[1]) | first %}
+{% capture lead_p %}<p>{{ lead }}</p>{% endcapture %}
+<p class="lead">{{ lead }}</p>
+{{ content | replace: lead_p, '' }}
