@@ -8,17 +8,6 @@ layout: default
     <form role="form" action="https://mailer.donlabs.com" method="post" id="contactForm">
       <div class="row">
         <div class="form-group col-sm-6">
-          <label for="to">Contact</label>
-          <select type="text" class="form-control" name="to">
-            <option value="hello@brightonjapan.com">General Enquiries</option>
-            {% for contact in contacts %}
-            {% if contact.email %}
-            <option value="{{ contact.email }}">{{ contact.title }}</option>
-            {% endif %}
-            {% endfor %}
-          </select>
-        </div>
-        <div class="form-group col-sm-6">
           <label for="subject">Subject *</label>
           <input type="text" class="form-control" name="subject" required>
         </div>
