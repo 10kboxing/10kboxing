@@ -272,20 +272,18 @@ a.thumb, a.thumb:hover {
     background: #fff;
 }
 .thumb figure * {
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 4s ease-in-out;
+    -moz-transition: all 4s ease-in-out;
+    -o-transition: all 4s ease-in-out;
+    -ms-transition: all 4s ease-in-out;
+    transition: all 4s ease-in-out;
 }
 .thumb:hover figure img, .thumb:hover figure .img {
-    -moz-transform: scale(1.2) rotate(-3deg);
-    -webkit-transform: scale(1.2) rotate(-3deg);
-    -o-transform: scale(1.2) rotate(-3deg);
-    -ms-transform: scale(1.2) rotate(-3deg);
-    transform: scale(1.2) rotate(-3deg);
-    filter: alpha(opacity=50);
-    opacity: .5;
+    -moz-transform: scale(2) rotate(-3deg);
+    -webkit-transform: scale(2) rotate(-3deg);
+    -o-transform: scale(2) rotate(-3deg);
+    -ms-transform: scale(2) rotate(-3deg);
+    transform: scale(2) rotate(-3deg);
 }
 .thumb figure>.label {
     position:absolute;
@@ -435,86 +433,10 @@ a.box-red:hover {
     z-index:1;
     position: relative
 }
-.arrow-down {
-    position: absolute;
-    bottom: 80px;
-    color: #fff;
-    font-size: 56px;
-    text-align: center;
-    margin-left: -28px;
-    top: auto;
-    left: 50%;
-    text-shadow: 0 1px 2px rgba(0,0,0,.6);
-    filter: alpha(opacity=75);
-    opacity: .75;
-	-webkit-animation: bounce 2s ease infinite;
-	-moz-animation: bounce 2s ease infinite;
-	-ms-animation: bounce 2s ease infinite;
-	-o-animation: bounce 2s ease infinite;
-	animation: bounce 2s ease infinite;
-    z-index: 3;
-}
-
-@-webkit-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
-	40% {-webkit-transform: translateY(-20px);}
-	60% {-webkit-transform: translateY(-8px);}
-}
-
-@-moz-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
-	40% {-moz-transform: translateY(-20px);}
-	60% {-moz-transform: translateY(-8px);}
-}
-
-@-ms-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {-ms-transform: translateY(0);}
-	40% {-ms-transform: translateY(-20px);}
-	60% {-ms-transform: translateY(-8px);}
-}
-
-@-o-keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
-	40% {-o-transform: translateY(-20px);}
-	60% {-o-transform: translateY(-8px);}
-}
-@keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-20px);}
-	60% {transform: translateY(-8px);}
-}
-
-.bounce {
-	-webkit-animation-name: bounce;
-	-moz-animation-name: bounce;
-	-ms-animation-name: bounce;
-	-o-animation-name: bounce;
-	animation-name: bounce;
-}
-.bg-pattern-1 {
-    background-image:url(../pattern_1.png);
-}
-.bg-pattern-2 {
-    background-image:url(../pattern_2.png);
-}
-#tickets .input-group {
-    width: 200px;
-}
-#tickets .input-group-addon {
-    border-radius: 0;
-    color:#333;
-    font-size:1.5em;
-}
 body .don-share {
     margin: 10px -10px 0 0;
 }
 
-.circle {
-    padding-top: 50%;
-    padding-bottom: 50%;
-    line-height: 0;
-    border-radius: 50%;
-}
 
 .nav-facebook a {
     background-color: #3b5998;
