@@ -1,0 +1,16 @@
+<div class="section" id="gallery">
+  <div class="container">
+  <h3>Gallery</h3>
+  {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}
+    <div class="row equal">
+      {% for item in gallery %}
+      <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
+        <figure>
+          <img src="{{ site.cdn | replace: '0x0', '300x300'}}{{ item.image }}"/>
+        </figure>
+        {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+      </a><br></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

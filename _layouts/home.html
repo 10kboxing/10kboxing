@@ -10,34 +10,9 @@ layout: default
     <p class="lead">{{ content | strip_html | newline_to_br }}</p>
   </div>
 </div-->
-{% for section in site.content %}
-  {% capture include %}home/{{ section.layout }}.html{% endcapture %}
-  {% include_relative {{include}} %}
+{% assign sections = (site.content | where: 'published', 1 | sort: 'order') %}
+{% for section in sections %}
+  {% capture layout %}{% if section.layout == 'home' or  section.layout == 'default' %}page{% else %}{{ section.layout }}{% endif %}{% endcapture %}
+  {% capture include %}template/home/{{ layout }}.html{% endcapture %}
+  {% include {{include}} %}
 {% endfor %}
-  
-<div class="section" id="gallery">
-  <div class="container">
-  <h3>Gallery</h3>
-  {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}
-  <div class="row equal">
-    {% for item in gallery %}
-    <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
-    <figure>
-      <img src="{{ site.cdn | replace: '0x0', '300x300'}}{{ item.image }}"/>
-    </figure>
-    {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
-    </a><br></div>
-    {% endfor %}
-  </div>
-  </div>
-</div>
-
-<div class="section" id="blog">
-  <div class="container">
-  </div>
-</div>
-
-<div class="section" id="contact">
-  <div class="container">
-  </div>
-</div>
