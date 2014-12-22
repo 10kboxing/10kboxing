@@ -252,9 +252,6 @@ a.thumb, a.thumb:hover {
     text-decoration:none;
     cursor: pointer;
 }
-.red .thumb:hover h3 {
-    border-bottom: 3px solid #000;
-}
 .thumb figure {
     position: relative;
     overflow: hidden;
@@ -262,18 +259,14 @@ a.thumb, a.thumb:hover {
     background: #fff;
 }
 .thumb figure * {
-    -webkit-transition: all 4s ease-in-out;
-    -moz-transition: all 4s ease-in-out;
-    -o-transition: all 4s ease-in-out;
-    -ms-transition: all 4s ease-in-out;
-    transition: all 4s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 .thumb:hover figure img, .thumb:hover figure .img {
-    -moz-transform: scale(2) rotate(-3deg);
-    -webkit-transform: scale(2) rotate(-3deg);
-    -o-transform: scale(2) rotate(-3deg);
-    -ms-transform: scale(2) rotate(-3deg);
-    transform: scale(2) rotate(-3deg);
+    background-color: #0066ff;
 }
 .thumb figure>.label {
     position:absolute;
