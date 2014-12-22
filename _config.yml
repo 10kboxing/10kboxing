@@ -49,6 +49,7 @@ collections:
         permalink: ':path.html'
     team:
         output: true
+        permalink: ':path.html'
     gallery:
         output: true
 description: '10K Boxing'
