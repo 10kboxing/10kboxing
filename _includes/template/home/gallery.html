@@ -9,17 +9,14 @@
         {% capture thumb %}{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}{% endcapture %}
       {% elsif item.category == 'videos' %}
         {% assign video = (item.youtube | split: 'v=') %}
-        
         {% if video[1] contains '&' %}
           {% assign video = (video[1] | split: '&') %}
           {% capture id %}{{ video[0] }}{% endcapture %}
         {% else %}
           {% capture id %}{{ video[1] }}{% endcapture %}
         {% endif %}
-        
         {% capture url %}{{ item.youtube }}" data-toggle="lightbox{% endcapture %}
         {% capture thumb %}{% if item.image %}{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}{% else %}//img.youtube.com/vi/{{ id }}/0.jpg{% endif %}{% endcapture %}
-        
       {% endif %}
       <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ url }}" >
         <figure>
