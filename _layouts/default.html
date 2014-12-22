@@ -54,7 +54,7 @@
         
         {% assign pages = (site.content | where: 'published', 1 | where: 'parent', nil | sort: 'order') %}
         {% for item in pages %}
-          <li>
+          <li {% if item.slug == page.slug or page.collection == item.slug or page.app == item.slug %}class="active"{% endif %}>
             <a href="{{ site.url }}#{{ item.slug }}">
               {% if item.slug == 'index' %}Home{% else %}{{ item.title }}{% endif %}
             </a>
