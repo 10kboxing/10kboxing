@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{% assign photos = (site.gallery | where: 'album', page.slug) %}
 {% if page.image %}
 <div class="banner" style="background-image: url(//cdn.donlabs.com/1280x400/brightonjapan/{{ page.image }})">
   <div class="container">
@@ -15,16 +14,18 @@ layout: default
 <div class="section" id="content">
   <div class="container">
     {% unless page.image %}<h1 class="page-header" style="margin-top:90px">{{ page.title }}</h1>{% endunless %}
-    {{ content }}
-    <div class="row equal">
-      {% for item in photos %}
-        <div class="col-sm-4 col-md-3"><a class="thumb" {% if page.image %}data-toggle="lightbox" data-remote="//cdn.donlabs.com/800x0/brightonjapan/{{ item.image }}" data-gallery="photoalbum"{% else %}href="{{ site.url }}{{ item.url }}"{% endif %}>
+    {% include template/content.html %}
+    {% assign files = (site.static_files | where: 'extname', '.jpg' | sort: 'modified_time') %}
+    <div class="row row-padded">
+    {% for file in files reversed %}{% if file.path contains page.directory %}
+      <div class="col-xs-6 col-sm-4 col-lg-3">
+        <a class="thumb" data-toggle="lightbox" data-gallery="gallery" href="{{ site.cdn | replace: '0x0', '1000x0' }}{{ file.path }}">
           <figure>
-            <div class="thumb-square img" style="background-image: url(//cdn.donlabs.com/432x243/brightonjapan/{{ item.image }})"></div>
+            <img src="{{ site.cdn | replace: '0x0', '263x263' }}{{ file.path }}">
           </figure>
-          {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
-        </a><br></div>
-      {% endfor %}
+        </a>
+      </div>
+    {% endif %}{% endfor %}
     </div>
   </div>
 </div>
