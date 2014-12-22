@@ -44,7 +44,14 @@ $(function() {
         }
     }); 
     $(window).on('resize', function() {
-        $('#nav').data('bs.affix').options.offset = $('#nav').offset().top;
+        if($('#nav').hasClass('affix-top')) {
+            $('#nav').data('bs.affix').options.offset = $('#nav').offset().top;
+        }
+        else if($('#nav').hasClass('affix')) {
+            $('#nav').removeClass('affix').addClass('affix-top');
+            $('#nav').data('bs.affix').options.offset = $('#nav').offset().top;
+            $('#nav').removeClass('affix-top').addClass('affix');
+        }
     });
 });
 
