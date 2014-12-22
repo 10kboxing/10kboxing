@@ -4,14 +4,29 @@
   {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}
     <div class="row equal">
       {% for item in gallery %}
-      <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
-      {{ item | jsonify }}
+      {% if item.category == 'photos' %}
+        {% capture url %}{{ site.url }}{{ item.url }}{% endcapture %}
+        {% capture thumb %}{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}{% endcapture %}
+      {% elsif item.category == 'videos' %}
+        {% assign video = (item.youtube | split: 'v=') %}
+        {% if video[1] contains '&' %}
+          {% assign video = (video[1] | split: '&') %}
+          {% capture id %}{{ video[0] }}{% endcapture %}
+        {% else %}
+          {% capture id %}{{ video[1] }}{% endcapture %}
+        {% endif %}
+        
+        {% capture url %}{{ item.youtube }}{% endcapture %}
+        {% capture thumb %}//img.youtube.com/vi/{{ id }}/0.jpg{% endcapture %}
+        
+      {% endif %}
+      {% endfor %}
+      <div class="col-sm-4 col-md-3"><a class="thumb" href="{{ url }}" >
         <figure>
-          <img class="img-responsive" src="{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}"/>
+          <img class="img-responsive" src="{{ thumb }}"/>
         </figure>
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
       </a><br></div>
-      {% endfor %}
     </div>
   </div>
 </div>
