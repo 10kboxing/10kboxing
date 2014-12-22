@@ -46,7 +46,7 @@ $(function() {
         }
     }); 
 });
-$('#nav').data('bs.affix').options.offset = newOffset
+//$('#nav').data('bs.affix').options.offset = newOffset
 
 // equal heights
 function equalHeights() {
