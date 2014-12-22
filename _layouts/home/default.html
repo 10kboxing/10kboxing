@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="{{ site.author }}" />
+    <link rel="icon" href="{{ site.url }}/favicon.ico" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url | remove:'index.html' }}"/>
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href="{{site.url}}/assets/css/style.css?{{ site.v }}" rel="stylesheet" />
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{site.url}}/assets/ie10-viewport-bug-workaround.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:locale" content="{{ site.locale }}"/>
+    <meta property="og:url" content="{{ site.url }}{{ page.url | remove:"index" | remove:".html" }}" />
+    {% if site.facebook_app %}<meta property="fb:app_id" content="{{ site.facebook_app }}" />{% endif %}
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@{{ site.twitter }}"/>
+    <meta name="twitter:domain" content="{{ site.url }}"/>
+    <meta name="twitter:creator" content="@{{ site.twitter }}"/>
+    
+  </head>
+  <body data-spy="scroll" data-target=".navbar-inverse" data-offset="70">
+  <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+  <div id="nav" class="navbar navbar-inverse affix-top {% if page.slug == 'index' %}navbar-bottom{% endif %}" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> 
+         <a class="navbar-brand brand-small" href="{{site.url}}">
+          <img src="{{site.url}}/assets/logo_small.png" alt="{{ site.title }}" id="logo" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        
+        {% assign pages = (site.content | where: 'published', 1 | where: 'parent', nil | sort: 'order') %}
+        {% for item in pages %}
+          <li {% if item.slug == page.slug or page.collection == item.slug or page.app == item.slug %}class="active"{% endif %}>
+            <a href="{% unless page.slug == 'index' %}{{ site.url }}/{% endunless %}#{{ item.slug }}">
+              {% if item.slug == 'index' %}Home{% else %}{{ item.title }}{% endif %}
+            </a>
+          </li>
+        {% endfor %}
+        
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+  {{content}}
+  
+  <footer>
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        {% for provider in site.profiles.provider %}
+        <li class="visible-lg nav-{{ provider }}"><a href="{{ site.profiles[provider] }}" target="_blank"><i class="fa fa-fw fa-3x fa-{{ provider }}"></i></a>
+        {% endfor %}
+      </ul>
+      <div class="footer-left">© 2014 {{ site.title }} • Web design by ABE Media <!--a href="/sitemap">Sitemap</a--></div>
+    </div>
+  </footer>
+  <script src="{{site.url}}/assets/js/scripts.js?{{ site.v }}"></script>
+</body>
+</html>
