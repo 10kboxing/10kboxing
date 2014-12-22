@@ -17,7 +17,7 @@
         {% endif %}
         
         {% capture url %}{{ item.youtube }}" data-toggle="lightbox{% endcapture %}
-        {% capture thumb %}//img.youtube.com/vi/{{ id }}/0.jpg{% endcapture %}
+        {% capture thumb %}{% if item.image %}{{ site.cdn | replace: '0x0', '300x168'}}{{ item.image }}{% else %}//img.youtube.com/vi/{{ id }}/0.jpg{% endif %}{% endcapture %}
         
       {% endif %}
       {% endfor %}
