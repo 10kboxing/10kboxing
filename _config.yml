@@ -20,10 +20,13 @@ profiles:
     provider:
         - facebook
         - twitter
-        - pinterest
-    facebook: 'https://facebook.com/brightonjapanfestival'
-    twitter: 'https://twitter.com/brightonjapan15'
+        - youtube
+        - instagram
+    facebook: 'https://facebook.com/10kboxing'
+    twitter: 'https://twitter.com/10kboxing'
     pinterest: 'https://pinterest.com/brightonjapan'
+    youtube: 'https://youtube.com/10kboxing'
+    instagram: 'https://instagram.com/10kboxing'
 defaults:
     -
         scope:
@@ -63,3 +66,5 @@ relative_permalinks: 'false'
 v: 1q
 baseurl: /
 cdn: //cdn.donlabs.com/0x0/badymanagement/
+comments:
+    provider: '1'
