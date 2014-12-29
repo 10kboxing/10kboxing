@@ -1,18 +1,21 @@
 /*$("h1").fitText();*/
 
-var $parallax;
-
 $('#carousel').on('slide.bs.carousel', function () {
     $('.parallax-mirror').hide();
-    var index = $('#carousel .active').index('#carousel .item');
-    console.log(index);
-    console.log($('.parallax-mirror'));
+    //console.log($('.parallax-mirror'));
 });
 
 $('#carousel').on('slid.bs.carousel', function () {
+    var index = $('#carousel .active').index('#carousel .item');
     var $banner = $('#carousel .active .banner');
-    $parallax = $banner.parallax({imageSrc: $banner.data('imageSrc')});
-    console.log($parallax);
+    $banner.parallax({imageSrc: $banner.data('imageSrc')});
+    
+    
+    console.log(index);
+    console.log($('#carousel .item').length);
+    console.log($('#carousel .item').length - index);
+    
+    
 });
 
 // smooth scroll to anchor
