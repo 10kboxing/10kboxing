@@ -9,6 +9,7 @@ $('#carousel').on('slide.bs.carousel', function () {
     var $banner = $('#carousel .active .banner');
     $banner.css('background-image', $banner.data('imageSrc'));
     $('.parallax-mirror').remove();
+    console.log($banner.data('imageSrc'));
 });
 
 // smooth scroll to anchor
