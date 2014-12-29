@@ -10,12 +10,7 @@ $('#carousel').on('slid.bs.carousel', function () {
     var $banner = $('#carousel .active .banner');
     $banner.parallax({imageSrc: $banner.data('imageSrc')});
     
-    
-    console.log(index);
-    console.log($('#carousel .item').length);
-    console.log($('#carousel .item').length - index);
-    
-    
+    $('.parallax-mirror')[$('#carousel .item').length - index].show();
 });
 
 // smooth scroll to anchor
