@@ -169,7 +169,7 @@ body>footer a {
     z-index: -1;
 }
 #carousel .active .banner {
-    background: transparent !important;
+    background-image: none !important;
 }
 .banner .banner-text {
     position:absolute;
