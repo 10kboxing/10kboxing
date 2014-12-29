@@ -3,7 +3,10 @@
 var $parallax;
 
 $('#carousel').on('slide.bs.carousel', function () {
-    //$('.parallax-mirror').remove();
+    $('.parallax-mirror').hide();
+    var index = $('#carousel .active').index('#carousel .item');
+    console.log(index);
+    console.log($('.parallax-mirror'));
 });
 
 $('#carousel').on('slid.bs.carousel', function () {
