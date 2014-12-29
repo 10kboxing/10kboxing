@@ -1,5 +1,11 @@
 /*$("h1").fitText();*/
 
+$('.carousel').on('slide.bs.carousel', function () {
+    $('.parallax-mirror').remove();
+    $('.parallax-mirror').parallax({imageSrc: '/path/to/image.jpg'});
+  // do something…
+})
+
 // smooth scroll to anchor
 $(function() {
   $('a[href*=#]:not([href=#],.carousel-control)').click(function() {
