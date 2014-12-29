@@ -7,7 +7,7 @@ $('#carousel').on('slid.bs.carousel', function () {
 });
 $('#carousel').on('slide.bs.carousel', function () {
     var $banner = $('#carousel .active .banner');
-    $banner.css('background-image', '');
+    $banner.css('background-image', $banner.data('imageSrc'));
     $('.parallax-mirror').remove();
 });
 
