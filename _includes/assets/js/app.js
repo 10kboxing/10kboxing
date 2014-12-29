@@ -11,6 +11,8 @@ $('#carousel').on('slid.bs.carousel', function () {
     $banner.parallax({imageSrc: $banner.data('imageSrc')});
     
     $('.parallax-mirror')[$('#carousel .item').length - index].show();
+    
+    console.log($('.parallax-mirror')[$('#carousel .item').length - index]);
 });
 
 // smooth scroll to anchor
