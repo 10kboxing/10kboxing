@@ -2,7 +2,7 @@
 
 $('#carousel').on('slid.bs.carousel', function () {
     $('.parallax-mirror').remove();
-    var $banner = $('#carousel .active .banner');
+    var $banner = $('#carousel .next .banner');
     $banner.parallax({imageSrc: $banner.data('imageSrc')});
 });
 
