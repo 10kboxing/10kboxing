@@ -1,10 +1,10 @@
 /*$("h1").fitText();*/
 
-$('#carousel').on('slide.bs.carousel', function () {
+$('#carousel').on('slid.bs.carousel', function () {
     $('.parallax-mirror').remove();
     var $banner = $('#carousel .active .banner');
     $banner.parallax({imageSrc: $banner.data('imageSrc')});
-})
+});
 
 // smooth scroll to anchor
 $(function() {
