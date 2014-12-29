@@ -168,7 +168,7 @@ body>footer a {
     height: 100%;
     z-index: -1;
 }
-.item.active>.banner {
+#carousel .active .banner {
     background: transparent !important;
 }
 .banner .banner-text {

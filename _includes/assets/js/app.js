@@ -1,11 +1,8 @@
 /*$("h1").fitText();*/
 
-$('#carousel').on('slide.bs.carousel', function () {
-    $('.parallax-mirror').remove();
-});
-
 $('#carousel').on('slid.bs.carousel', function () {
     var banner = $('#carousel .active .banner');
+    $('.parallax-mirror').remove();
     banner.parallax({imageSrc: banner.data('imageSrc')});
 });
 
