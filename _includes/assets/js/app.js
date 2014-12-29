@@ -10,7 +10,7 @@ $('#carousel').on('slid.bs.carousel', function () {
     var $banner = $('#carousel .active .banner');
     $banner.parallax({imageSrc: $banner.data('imageSrc')});
     
-    $('.parallax-mirror')[$('#carousel .item').length - index].show();
+    //$('.parallax-mirror')[$('#carousel .item').length - index].show();
     
     console.log($('.parallax-mirror'));
 });
