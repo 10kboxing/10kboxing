@@ -1,14 +1,12 @@
 /*$("h1").fitText();*/
 
 $('#carousel').on('slide.bs.carousel', function () {
-    $('#carousel .banner').css('background', '');
     $('.parallax-mirror').remove();
 });
 
 $('#carousel').on('slid.bs.carousel', function () {
     var banner = $('#carousel .active .banner');
     banner.parallax({imageSrc: banner.data('imageSrc')});
-    banner.css('background', 'transparent');
 });
 
 // smooth scroll to anchor
