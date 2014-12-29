@@ -1,15 +1,14 @@
 /*$("h1").fitText();*/
 
-$('#carousel').on('slid.bs.carousel', function () {
-    var $banner = $('#carousel .active .banner');
-    $banner.css('background-image', 'none');
-    $banner.parallax({imageSrc: $banner.data('imageSrc')});
-});
 $('#carousel').on('slide.bs.carousel', function () {
-    var $banner = $('#carousel .active .banner');
-    $banner.css('background-image', $banner.data('imageSrc'));
+    $('#carousel .banner').css('background', '');
     $('.parallax-mirror').remove();
-    console.log($banner.data('imageSrc'));
+});
+
+$('#carousel').on('slid.bs.carousel', function () {
+    var banner = $('#carousel .active .banner');
+    banner.parallax({imageSrc: banner.data('imageSrc')});
+    banner.css('background', 'transparent');
 });
 
 // smooth scroll to anchor
