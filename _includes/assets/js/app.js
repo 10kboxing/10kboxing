@@ -1,9 +1,9 @@
 /*$("h1").fitText();*/
 
-$('.carousel').on('slide.bs.carousel', function () {
+$('#carousel').on('slide.bs.carousel', function () {
     $('.parallax-mirror').remove();
-    $('.parallax-mirror').parallax({imageSrc: '/path/to/image.jpg'});
-  // do something…
+    var $banner = $('#carousel .active .banner');
+    $banner.parallax({imageSrc: $banner.data('imageSrc')});
 })
 
 // smooth scroll to anchor

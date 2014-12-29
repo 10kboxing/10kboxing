@@ -63,7 +63,7 @@ collections:
         output: true
 description: '10K Boxing'
 relative_permalinks: 'false'
-v: 1q
+v: 2
 baseurl: /
 cdn: //cdn.donlabs.com/0x0/badymanagement/
 comments:
