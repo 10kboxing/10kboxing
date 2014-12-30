@@ -17,7 +17,7 @@ $('#carousel').on('slid.bs.carousel', function () {
     $($('.parallax-mirror')[$('#carousel .item').length - index]).show();
     
     console.log($('.parallax-mirror'));
-    console.log($.data())
+    console.log($);
 });
 
 // smooth scroll to anchor
