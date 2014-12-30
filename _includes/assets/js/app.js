@@ -1,5 +1,9 @@
 /*$("h1").fitText();*/
 
+$(document).ready(function() {
+    $('.parallax-mirror').css();
+})
+
 $('#carousel').on('slide.bs.carousel', function () {
     $('.parallax-mirror').hide();
     //console.log($('.parallax-mirror'));
@@ -8,11 +12,12 @@ $('#carousel').on('slide.bs.carousel', function () {
 $('#carousel').on('slid.bs.carousel', function () {
     var index = $('#carousel .active').index('#carousel .item');
     var $banner = $('#carousel .active .banner');
-    $banner.parallax().refresh;
+    $banner.parallax({imageSrc: $banner.data('imageSrc')});
     
     $($('.parallax-mirror')[$('#carousel .item').length - index]).show();
     
     console.log($('.parallax-mirror'));
+    console.log($.data())
 });
 
 // smooth scroll to anchor
