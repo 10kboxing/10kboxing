@@ -8,7 +8,7 @@ $('#carousel').on('slide.bs.carousel', function () {
 $('#carousel').on('slid.bs.carousel', function () {
     var index = $('#carousel .active').index('#carousel .item');
     var $banner = $('#carousel .active .banner');
-    $banner.parallax('refresh');
+    $banner.parallax().refresh;
     
     $($('.parallax-mirror')[$('#carousel .item').length - index]).show();
     
