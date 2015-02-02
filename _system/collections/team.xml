@@ -2,10 +2,10 @@
 <form>
     <fields>
         <fieldset name="options">
-            <field name="wins" type="number" label="Wins" filter="int" class="form-control" />
-            <field name="kos" type="number" label="Wins by KO" filter="int" class="form-control" />
-            <field name="losses" type="number" label="Losses" filter="int" class="form-control" />
-            <field name="draws" type="number" label="Draws" filter="int" class="form-control" />
+            <field name="wins" type="number" label="Wins" filter="int" class="form-control" default="0" />
+            <field name="kos" type="number" label="Wins by KO" filter="int" class="form-control" default="0" />
+            <field name="losses" type="number" label="Losses" filter="int" class="form-control" default="0" />
+            <field name="draws" type="number" label="Draws" filter="int" class="form-control" default="0" />
         </fieldset>
         <fieldset name="profile">
             <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
