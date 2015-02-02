@@ -51,7 +51,7 @@ defaults:
             path: ''
             type: team
         values:
-            layout: page
+            layout: fighter
 collections:
     content:
         output: true
@@ -62,7 +62,7 @@ collections:
     gallery:
         output: true
 description: '10K Boxing'
-relative_permalinks: 'false'
+relative_permalinks: false
 v: 3f
 baseurl: /
 cdn: //cdn.donlabs.com/0x0/badymanagement/
