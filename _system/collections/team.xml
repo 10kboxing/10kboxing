@@ -13,7 +13,7 @@
             <field name="nationality" type="text" label="Nationality" filter="string" class="form-control" />
             <field name="birthday" type="date" label="Birthday" filter="string" class="form-control" />
             <field name="height" type="text" label="Height" filter="string" class="form-control" />
-            <field name="weight_class" type="text" label="Weight Class" filter="string" class="form-control">            
+            <field name="weight_class" type="list" label="Weight Class" filter="string" class="form-control">            
                 <option value="Heavyweight">Heavyweight</option>
                 <option value="Cruiserweight">Cruiserweight</option>
                 <option value="Light heavyweight">Light heavyweight</option>
