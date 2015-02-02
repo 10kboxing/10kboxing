@@ -254,6 +254,9 @@ a.thumb, a.thumb:hover {
     -ms-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
+.thumb img {
+    max-width: 100%;
+}
 .thumb:hover figure img, .thumb:hover figure .img {
     background-color: #0066ff;
 }
