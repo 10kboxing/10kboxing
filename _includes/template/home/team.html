@@ -9,6 +9,7 @@
         </figure>
 
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+        <p class="text-muted">{{ item.weight_class }}</p>
         <p>{{ item.wins }}-{{ item.losses }}-{{ item.draws }} {% if item.kos > 0 %}({{ item.kos }} KOs){% endif %}</p>
       </a><br></div>
       {% endfor %}
