@@ -256,6 +256,7 @@ a.thumb, a.thumb:hover {
 }
 .thumb img {
     max-width: 100%;
+    height: auto;
 }
 .thumb:hover figure img, .thumb:hover figure .img {
     background-color: #0066ff;
