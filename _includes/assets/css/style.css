@@ -168,9 +168,6 @@ body>footer a {
     height: 100%;
     z-index: -1;
 }
-#carousel .active .banner {
-    background-image: none !important;
-}
 .banner .banner-text {
     position:absolute;
     bottom: 30px;
