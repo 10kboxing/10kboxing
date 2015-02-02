@@ -1,6 +1,6 @@
 title: '10K Boxing'
 permalink: none
-url: 'http://beta.abemedia.co.uk/10kboxing'
+url: 'http://10kboxing.com'
 timezone: Europe/London
 exclude:
     - Gemfile
@@ -65,6 +65,6 @@ description: '10K Boxing'
 relative_permalinks: false
 v: 3f
 baseurl: /
-cdn: //cdn.donlabs.com/0x0/badymanagement/
+cdn: //cdn.donlabs.com/0x0/10kboxing/
 comments:
     provider: '1'
