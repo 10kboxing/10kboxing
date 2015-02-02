@@ -1,6 +1,6 @@
 <div class="section" id="{{ section.slug }}">
   <div class="container">
-    <h3 class="h2 page-header">{{ section.title }}</h3>
+    {% unless section.title == 'Home' %}<h3 class="h2 page-header">{{ section.title }}</h3>{% endunless %}
     {{ section.content }}
   </div>
 </div>
