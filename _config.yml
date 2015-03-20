@@ -65,6 +65,6 @@ description: '10K Boxing'
 relative_permalinks: false
 v: 3g
 baseurl: /
-cdn: //cdn.donlabs.com/0x0/10kboxing/
+cdn: //cdn.abemedia.co.uk/0x0/10kboxing/
 comments:
     provider: '1'
