@@ -14,5 +14,5 @@ layout: default
 {% for section in sections %}
   {% capture layout %}{% if section.layout == 'home' or  section.layout == 'default' %}page{% else %}{{ section.layout }}{% endif %}{% endcapture %}
   {% capture include %}template/home/{{ layout }}.html{% endcapture %}
-  {% include {{include}} %}
+  {% include {{include}} page=section %}
 {% endfor %}
