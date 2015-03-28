@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign team = (site.team | where: 'published', 1 | sort: 'order') %}
+{% assign team = (site.fighters | where: 'published', 1 | sort: 'order') %}
 {% include modules/carousel.html category=team id="index" %}
 
 <!--div class="section" id="content">
