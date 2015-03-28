@@ -7,7 +7,7 @@
             <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
             <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
             <field name="location" type="text" label="Location" filter="string" class="form-control" />
-            <field name="birthday" type="date" label="Birthday" filter="string" class="form-control" />
+            <field name="birthday" date-format="YYYY-MM-DD" type="datetime" label="Birthday" filter="string" class="form-control" />
             <field name="height" type="text" label="Height" filter="string" class="form-control" />
             <field name="waist" type="text" label="Waist" filter="string" class="form-control" />
             <field name="bust" type="text" label="Bust" filter="string" class="form-control" />
