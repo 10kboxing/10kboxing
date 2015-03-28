@@ -11,7 +11,6 @@
             <field name="height" type="text" label="Height" filter="string" class="form-control" />
             <field name="waist" type="text" label="Waist" filter="string" class="form-control" />
             <field name="bust" type="text" label="Bust" filter="string" class="form-control" />
-            <field name="hometown" type="text" label="Hometown" filter="string" class="form-control" />
         </fieldset>
     </fields>
 </form>

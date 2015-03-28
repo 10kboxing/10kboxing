@@ -4,10 +4,6 @@ layout: default
 {% assign team = (site.fighters | where: 'published', 1 | sort: 'order') %}
 {% include modules/carousel.html category=team id="index" %}
 
-{{ site.time }}<br>
-{{ site.time | date: '%s' }}<br>
-{{ site.time | date: '%S' }}<br>
-
 <!--div class="section" id="content">
   <div class="container">
     <h1 class="page-header">{{ page.title }}</h1>
