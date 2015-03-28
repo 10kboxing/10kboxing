@@ -10,8 +10,15 @@
         </figure>
 
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+        {% if include.page.app == 'fighters' %}
         <p class="text-muted">{{ item.weight_class }}</p>
         <p>{{ item.wins }}-{{ item.losses }}-{{ item.draws }} {% if item.kos > 0 %}({{ item.kos }} KOs){% endif %}</p>
+        {% else %}
+        {% assign timestamp = (site.time | date: '%s') %}
+        {% assign agestamp = (item.birthday | date: '%s') %}
+        {% assign age = (timestamp | minus: agestamp) | divided_by: '31536000' %}
+        <p class="text-muted">{{ item.birthday }}</p>
+        {% endif %}
       </a><br></div>
       {% endfor %}
     </div>
