@@ -49,9 +49,15 @@ defaults:
     -
         scope:
             path: ''
-            type: team
+            type: fighters
         values:
             layout: fighter
+    -
+        scope:
+            path: ''
+            type: models
+        values:
+            layout: model
 collections:
     content:
         output: true

@@ -5,5 +5,8 @@ gallery:
     title: Gallery
     icon: camera
 team:
-    title: Team
+    title: Fighters
+    icon: users
+team:
+    title: Models
     icon: users
