@@ -4,9 +4,9 @@ content:
 gallery:
     title: Gallery
     icon: camera
-team:
+fighters:
     title: Fighters
     icon: users
-team:
+models:
     title: Models
     icon: users
