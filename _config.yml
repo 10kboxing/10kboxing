@@ -62,7 +62,10 @@ collections:
     content:
         output: true
         permalink: ':path.html'
-    team:
+    fighters:
+        output: true
+        permalink: ':path.html'
+    models:
         output: true
         permalink: ':path.html'
     gallery:
