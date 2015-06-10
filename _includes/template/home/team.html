@@ -14,6 +14,7 @@
         {% if include.page.app == 'fighters' %}
         <p class="text-muted">{{ item.weight_class }}</p>
         <p>{{ item.wins }}-{{ item.losses }}-{{ item.draws }} {% if item.kos > 0 %}({{ item.kos }} KOs){% endif %}</p>
+        <p>{{ item.hometown }}</p>
         {% else %}
         {% assign agestamp = (item.birthday | date: '%s') %}
         {% assign age = ((site.time | date: '%s') | minus: agestamp) | divided_by: '31536000' %}
