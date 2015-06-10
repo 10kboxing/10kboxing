@@ -12,34 +12,38 @@ layout: default
           <div class="panel-body">
             <table class="table table-striped">
               <tbody>
-                <tr>
-                  <td><strong>Name</strong></td>
-                  <td>{{ page.title }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Nationality</strong></td>
-                  <td>{{ page.nationality }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Date of Birth</strong></td>
-                  <td>{{ page.birthday }}</td>
-                </tr>
-                <tr>
-                  <td><strong>Location</strong></td>
-                  <td>{{ page.hometown }}</td>
-                </tr>
+                {% if page.weight_class %}
                 <tr>
                   <td><strong>Weight Class</strong></td>
                   <td>{{ page.weight_class }}</td>
                 </tr>
+                {% endif %}
+                {% if page.hometown %}
                 <tr>
-                  <td><strong>Height</strong></td>
-                  <td>{{ page.height }}</td>
+                  <td><strong>Location</strong></td>
+                  <td>{{ page.hometown }}</td>
                 </tr>
+                {% endif %}
+                {% if page.birthday %}
+                {% assign agestamp = (page.birthday | date: '%s') %}
+                {% assign age = ((site.time | date: '%s') | minus: agestamp) | divided_by: '31536000' %}
+                <tr>
+                  <td><strong>Age</strong></td>
+                  <td>{{ age }}</td>
+                </tr>
+                {% endif %}
+                {% if page.gym %}
+                <tr>
+                  <td><strong>Gym</strong></td>
+                  <td>{{ page.gym }}</td>
+                </tr>
+                {% endif %}
+                {% if page.coach %}
                 <tr>
                   <td><strong>Coach</strong></td>
                   <td>{{ page.coach }}</td>
                 </tr>
+                {% endif %}
               </tbody>
             </table>
           </div>
