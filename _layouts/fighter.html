@@ -5,8 +5,44 @@ layout: default
 <div class="section" id="content">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">{{ content }}</div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">{{ content }}</div>
+      <div class="col-sm-3">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Book {{ page.title | split: ' ' | first }}</h3></div>
+          <div class="panel-body">
+    <form role="form" action="https://mailer.abemedia.co.uk" method="post" id="contactForm">
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input type="text" class="form-control" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Telephone</label>
+              <input type="tel" class="form-control" name="extra[telephone]">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea name="message" class="form-control" style="height:122px" required></textarea>
+          </div>
+          <div class="form-group text-right">
+            <button type="submit" class="btn btn-danger btn-lg">Send Enquiry</button>
+          </div>
+        </div>
+      </div>
+    </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">{{ page.title | split: ' ' | first }}'s Bio</h3></div>
           <div class="panel-body">
