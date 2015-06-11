@@ -6,18 +6,18 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
-        {% if page.video %}
-        {% assign video = (page.youtube | split: 'v=') %}
-        {% if video[1] contains '&' %}
-          {% assign video = (video[1] | split: '&') %}
-          {% capture videoid %}{{ video[0] }}{% endcapture %}
-        {% else %}
-          {% capture videoid %}{{ video[1] }}{% endcapture %}
-        {% endif %}<hr>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ videoid }}?rel=0" allowfullscreen></iframe>
+        {% assign files = (site.static_files | where: 'extname', '.jpg' | sort: 'modified_time') %}
+        <div class="row row-padded">
+        {% for file in files reversed %}{% if file.path contains page.directory %}
+          <div class="col-xs-6 col-sm-4 col-lg-3">
+            <a class="thumb" data-toggle="lightbox" data-gallery="gallery" href="{{ site.cdn | replace: '0x0', '1000x0' }}{{ file.path }}">
+              <figure>
+                <img src="{{ site.cdn | replace: '0x0', '263x263' }}{{ file.path }}">
+              </figure>
+            </a>
+          </div>
+        {% endif %}{% endfor %}
         </div>
-        {% endif %}
       </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
