@@ -10,7 +10,7 @@ layout: default
         <div class="row row-padded">
         {% for file in files reversed %}{% if file.path contains page.directory %}
           <div class="col-xs-6 col-sm-4 col-lg-3">
-            <a class="thumb" data-toggle="lightbox" data-gallery="gallery" href="{{ site.cdn | replace: '0x0', '1000x0' }}{{ file.path }}">
+            <a class="thumb" data-toggle="lightbox" data-gallery="gallery" href="{{ site.cdn | replace: '0x0', '600x0' }}{{ file.path }}">
               <figure>
                 <img src="{{ site.cdn | replace: '0x0', '263x263' }}{{ file.path }}">
               </figure>
