@@ -10,9 +10,8 @@
         <fieldset name="profile">
             <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
             <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
-            <field name="nationality" type="text" label="Nationality" filter="string" class="form-control" />
+            <field name="video" type="text" label="YouTube Video" filter="string" class="form-control" />
             <field name="birthday" type="date" label="Birthday" filter="string" class="form-control" />
-            <field name="height" type="text" label="Height" filter="string" class="form-control" />
             <field name="weight_class" type="list" label="Weight Class" filter="string" class="form-control">            
                 <option value="Heavyweight">Heavyweight</option>
                 <option value="Cruiserweight">Cruiserweight</option>
@@ -28,7 +27,6 @@
             </field>
             <field name="hometown" type="text" label="Location" filter="string" class="form-control" />
             <field name="coach" type="text" label="Coach" filter="string" class="form-control" />
-            <field name="stance" type="text" label="Stance" filter="string" class="form-control" />
         </fieldset>
     </fields>
 </form>
