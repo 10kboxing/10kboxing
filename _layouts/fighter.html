@@ -5,7 +5,7 @@ layout: default
 <div class="section" id="content">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">{{ content }}
+      <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
         {% if page.video %}
         {% assign video = (page.youtube | split: 'v=') %}
         {% if video[1] contains '&' %}
