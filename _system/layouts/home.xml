@@ -3,7 +3,7 @@
     <fields>
         <fieldset name="general">
             <field name="slides" type="multiform" label="Slideshow" filter="array" default="[{'ticket': 'Standard Ticket'}, {'ticket': 'VIP Ticket'}, {'ticket': 'Ringside Ticket'}]">
-                <field name="image" type="media" label="Image" filter="string" class="form-control" />
+                <field name="slide" type="media" label="Image" filter="string" class="form-control" />
                 
             </field>
         </fieldset>
