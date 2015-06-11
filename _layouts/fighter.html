@@ -48,10 +48,9 @@ layout: default
           <div class="panel-body">
             <table class="table table-striped">
               <tbody>
-                
                 <tr>
                   <td><strong>Stats</strong></td>
-                  <td>{{ item.wins }}-{{ item.losses }}-{{ item.draws }} {% if item.kos > 0 %}({{ item.kos }} KOs){% endif %}</td>
+                  <td>{{ page.wins }}-{{ page.losses }}-{{ page.draws }} {% if page.kos > 0 %}({{ page.kos }} KOs){% endif %}</td>
                 </tr>
                 {% if page.weight_class %}
                 <tr>
