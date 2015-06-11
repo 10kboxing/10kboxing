@@ -26,6 +26,7 @@
                 <option value="Featherweight">Featherweight</option>
             </field>
             <field name="hometown" type="text" label="Location" filter="string" class="form-control" />
+            <field name="gym" type="text" label="Gym" filter="string" class="form-control" />
             <field name="coach" type="text" label="Coach" filter="string" class="form-control" />
         </fieldset>
     </fields>
