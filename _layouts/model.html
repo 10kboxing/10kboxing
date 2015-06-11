@@ -5,10 +5,23 @@ layout: default
 <div class="section" id="content">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}</div>
+      <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
+        {% if page.video %}
+        {% assign video = (page.youtube | split: 'v=') %}
+        {% if video[1] contains '&' %}
+          {% assign video = (video[1] | split: '&') %}
+          {% capture videoid %}{{ video[0] }}{% endcapture %}
+        {% else %}
+          {% capture videoid %}{{ video[1] }}{% endcapture %}
+        {% endif %}<hr>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ videoid }}?rel=0" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+      </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading"><h3 class="panel-title">{{ page.title | split: ' ' | first }}'s Bio</h3></div>
+          <div class="panel-heading"><h3 class="panel-title">{{ page.title | split: ' ' | first }}'s Info</h3></div>
           <div class="panel-body">
             <table class="table table-striped">
               <tbody>
@@ -18,7 +31,7 @@ layout: default
                   <td>{{ page.location }}</td>
                 </tr>
                 {% endif %}
-                {% if page.age %}
+                {% if page.birthday %}
                 {% assign agestamp = (page.birthday | date: '%s') %}
                 {% assign age = ((site.time | date: '%s') | minus: agestamp) | divided_by: '31536000' %}
                 <tr>
