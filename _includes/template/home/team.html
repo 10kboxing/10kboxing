@@ -22,8 +22,10 @@
         {% endif %}
       </a><br></div>
       
-      {% if (forloop.index0 | mod:3 ) == 1 %}<p class="col-xs-12 visible-sm-block">&nbsp;</p>{% endif %}
-      {% if (forloop.index0 | mod:4 ) == 1 %}<p class="col-sm-12 hidden-xs hidden-sm">&nbsp;</p>{% endif %}
+      {% set smclear = (forloop.index0 | mod:3) %}
+      {% if smclear == 1 %}<p class="col-xs-12 visible-sm-block">&nbsp;</p>{% endif %}
+      {% set mdclear = (forloop.index0 | mod:4) %}
+      {% if mdclear == 1 %}<p class="col-sm-12 hidden-xs hidden-sm">&nbsp;</p>{% endif %}
       
       {% endfor %}
     </div>
