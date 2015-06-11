@@ -1,7 +1,7 @@
 <div class="section grey" id="{{ include.page.slug }}">
   <div class="container">
     <h3 class="h2 page-header">{{ section.title }}</h3>
-    <div class="row equal">
+    <div class="row">
       {% assign team = (site[include.page.app] | where: 'published', 1 | sort: 'order') %}
       {% for item in team %}
       <div class="col-sm-4 col-md-3 text-center"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
