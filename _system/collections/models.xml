@@ -2,9 +2,9 @@
 <form>
     <fields>
         <fieldset name="options">
-            <field name="directory" type="folderlist" label="Gallery Directory" filter="string" class="form-control" directory="images" />
         </fieldset>
         <fieldset name="profile">
+            <field name="directory" type="folderlist" label="Gallery Directory" filter="string" class="form-control" directory="images" />
             <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
             <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
             <field name="location" type="text" label="Location" filter="string" class="form-control" />
