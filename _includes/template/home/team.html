@@ -21,6 +21,10 @@
         <p class="text-muted">{% if agestamp %}{{ age }}, {% endif %}{{ item.location }}</p>
         {% endif %}
       </a><br></div>
+      
+      {% if (forloop.index0 | mod:3 ) == 1 %}<p class="col-xs-12 visible-sm-block">&nbsp;</p>{% endif %}
+      {% if (forloop.index0 | mod:4 ) == 1 %}<p class="col-sm-12 hidden-xs hidden-sm">&nbsp;</p>{% endif %}
+      
       {% endfor %}
     </div>
   </div>
