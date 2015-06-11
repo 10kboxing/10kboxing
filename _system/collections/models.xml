@@ -2,6 +2,7 @@
 <form>
     <fields>
         <fieldset name="options">
+            <field name="directory" type="folderlist" label="Gallery Directory" filter="string" class="form-control" directory="images" />
         </fieldset>
         <fieldset name="profile">
             <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
