@@ -22,7 +22,7 @@ profiles:
         - twitter
         - youtube
         - instagram
-    facebook: 'https://facebook.com/10kboxing'
+    facebook: 'https://www.facebook.com/10kBoxing?fref=ts'
     twitter: 'https://twitter.com/10kboxing'
     pinterest: 'https://pinterest.com/brightonjapan'
     youtube: 'https://youtube.com/10kboxing'
@@ -71,9 +71,20 @@ collections:
     gallery:
         output: true
 description: '10K Boxing'
-relative_permalinks: false
+relative_permalinks: 'false'
 v: 3g
 baseurl: /
 cdn: //cdn.abemedia.co.uk/0x0/10kboxing/
 comments:
     provider: '1'
+advanced:
+    xs_w: 263
+    xs_h: 0
+    sm_w: 432
+    sm_h: 0
+    md_w: 800
+    md_h: 0
+    lg_w: 1280
+    lg_h: 0
+    xl_w: 1920
+    xl_h: 0
