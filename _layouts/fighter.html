@@ -6,17 +6,23 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
-        {% if page.video %}
-        {% if page.video contains 'watch' %}
-          {% assign videourl = (page.video | replace: 'watch', 'embed' | append: '&rel=0') %}
-        {% else %}
-          {% capture videoid %}//www.youtube.com/embed/{{ page.video | remove: 'http://youtu.be/' | split: '/' | first }}{% endcapture %}
+      {% if page.video && page.video !== nil %}
+        {% if page.video contains 'v=' %}
+          {% assign video = (page.video | split: 'v=') %}
+          {% if video[1] contains '&' %}
+            {% assign video2 = (video[1] | split: '&') %}
+            {% capture videoid %}{{ video2[0] }}{% endcapture %}
+          {% else %}
+            {% capture videoid %}{{ video[1] }}{% endcapture %}
+          {% endif %}
+        {% elsif page.video contains 'http://youtu.be/' %}
+          {% capture videoid %}{{ page.video | remove: 'http://youtu.be/' | split: '/' | first }}{% endcapture %}
         {% endif %}
         <hr>
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="{{ videourl }}" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ videoid }}" allowfullscreen></iframe>
         </div>
-        {% endif %}
+      {% endif %}
       </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
