@@ -7,13 +7,14 @@ layout: default
     <div class="row">
       <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
         {% if page.video %}
-        {% assign video = (page.youtube | split: 'v=') %}
-        {% if video[1] contains '&' %}
-          {% assign video = (video[1] | split: '&') %}
-          {% capture videoid %}{{ video[0] }}{% endcapture %}
+        
+        
+        {% if page.video contains 'watch' %}
+          {% assign videourl = (page.video | replace: 'watch', 'embed' | append: '&rel=0') %}
         {% else %}
-          {% capture videoid %}{{ video[1] }}{% endcapture %}
-        {% endif %}<hr>
+          {% capture videoid %}//www.youtube.com/embed/{{ page.video | remove: 'http://youtu.be/' | split: '/' | first }}{% endcapture %}
+        {% endif %}
+        <hr>
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ videoid }}?rel=0" allowfullscreen></iframe>
         </div>
