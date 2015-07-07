@@ -7,8 +7,6 @@ layout: default
     <div class="row">
       <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
         {% if page.video %}
-        
-        
         {% if page.video contains 'watch' %}
           {% assign videourl = (page.video | replace: 'watch', 'embed' | append: '&rel=0') %}
         {% else %}
@@ -16,7 +14,7 @@ layout: default
         {% endif %}
         <hr>
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ videoid }}?rel=0" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="{{ videourl }}" allowfullscreen></iframe>
         </div>
         {% endif %}
       </div>
