@@ -15,8 +15,8 @@ layout: default
           {% else %}
             {% capture videoid %}{{ video[1] }}{% endcapture %}
           {% endif %}
-        {% elsif page.video contains 'http://youtu.be/' %}
-          {% capture videoid %}{{ page.video | remove: 'http://youtu.be/' | split: '/' | first }}{% endcapture %}
+        {% elsif page.video contains '//youtu.be/' %}
+          {% capture videoid %}{{ page.video | remove: 'http:' | remove: 'https:' | remove: '//youtu.be/' | split: '/' | first }}{% endcapture %}
         {% endif %}
         <hr>
         <div class="embed-responsive embed-responsive-16by9">
