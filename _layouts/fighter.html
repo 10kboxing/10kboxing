@@ -34,6 +34,12 @@ layout: default
                   <td><strong>Stats</strong></td>
                   <td>{{ page.wins }}-{{ page.losses }}-{{ page.draws }} {% if page.kos > 0 %}({{ page.kos }} KOs){% endif %}</td>
                 </tr>
+                {% if page.weight %}
+                <tr>
+                  <td><strong>Weight</strong></td>
+                  <td>{{ page.weight }}KG</td>
+                </tr>
+                {% endif %}
                 {% if page.weight_class %}
                 <tr>
                   <td><strong>Weight Class</strong></td>

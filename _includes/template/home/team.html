@@ -12,7 +12,7 @@
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
         
         {% if include.page.app == 'fighters' %}
-        <p class="text-muted">{{ item.weight_class }}</p>
+        <p class="text-muted">{% if item.weight > 0 %}{{ item.weight }}KG{% endif %}</p>
         <p>{{ item.wins }}-{{ item.losses }}-{{ item.draws }} {% if item.kos > 0 %}({{ item.kos }} KOs){% endif %}</p>
         <p>{{ item.hometown }}</p>
         {% else %}
