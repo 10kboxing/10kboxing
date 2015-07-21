@@ -2,6 +2,7 @@
 <form>
     <fields>
         <fieldset name="options">
+            <field name="weight" type="number" label="Weight (KG)" filter="int" class="form-control" default="" />
             <field name="wins" type="number" label="Wins" filter="int" class="form-control" default="0" />
             <field name="kos" type="number" label="Wins by KO" filter="int" class="form-control" default="0" />
             <field name="losses" type="number" label="Losses" filter="int" class="form-control" default="0" />
@@ -11,7 +12,7 @@
             <field name="image" type="media" label="Header Image" filter="string" class="form-control" />
             <field name="avatar" type="media" label="Profile Picture" filter="string" class="form-control" />
             <field name="video" type="text" label="YouTube Video" filter="string" class="form-control" />
-            <field name="birthday" type="date" label="Birthday" filter="string" class="form-control" />
+            <field name="birthday" type="datetime" format="YYYY-MM-DD" label="Birthday" filter="string" class="form-control" />
             <field name="weight_class" type="list" label="Weight Class" filter="string" class="form-control">            
                 <option value="Heavyweight">Heavyweight</option>
                 <option value="Cruiserweight">Cruiserweight</option>
