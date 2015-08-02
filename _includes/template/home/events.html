@@ -1,8 +1,8 @@
 {% assign event_count = (site.events | where: 'published', 1 | size) %}
-{% if event_count > 0 %}
-      <div class="section grey" id="{{ include.page.slug }}">
+<div class="section grey" id="{{ include.page.slug }}">
   <div class="container">
     <h3 class="h2 page-header">{{ section.title }}</h3>
+    {% if event_count > 0 %}
     <div class="row">
       {% assign events = (site.events | where: 'published', 1 | sort: 'date') %}
       {% for item in events reversed %}
@@ -20,6 +20,7 @@
       
       {% endfor %}
     </div>
+    {% endif %}
   </div>
 </div>
 {% endif %}
