@@ -1,12 +1,15 @@
 content:
     title: Content
     icon: sitemap
-gallery:
-    title: Gallery
-    icon: camera
+fighters:
+    title: Events
+    icon: calendar-o
 fighters:
     title: Fighters
     icon: users
+gallery:
+    title: Gallery
+    icon: camera
 models:
     title: Models
     icon: users
