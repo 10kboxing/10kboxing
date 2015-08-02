@@ -1,9 +1,11 @@
-<div class="section grey" id="{{ include.page.slug }}">
+{% assign event_count = (site.events | where: 'published', 1 | size) %}
+{% if event_count > 0 %}
+      <div class="section grey" id="{{ include.page.slug }}">
   <div class="container">
     <h3 class="h2 page-header">{{ section.title }}</h3>
     <div class="row">
-      {% assign team = (site.events | where: 'published', 1 | sort: 'order') %}
-      {% for item in team %}
+      {% assign events = (site.events | where: 'published', 1 | sort: 'date') %}
+      {% for item in events reversed %}
       <div class="col-sm-4 col-md-3 text-center"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
         <figure>
           <img class="img-thumbnail" src="{{ site.cdn | replace: '0x0', '300x200'}}{{ item.image }}"/>
@@ -20,3 +22,4 @@
     </div>
   </div>
 </div>
+{% endif %}
