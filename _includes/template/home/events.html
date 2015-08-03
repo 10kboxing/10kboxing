@@ -13,7 +13,8 @@
         </figure>
 
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
-        {{ item.date | date: "%d-%m-%Y"}}
+        {{ item.venue }}, {{ item.city }}<br>
+        {{ item.date | date: "%d %B %Y"}}
       </a><br></div>
       
       {% cycle include.page.app: '', '', '<p class="col-xs-12 visible-sm-block"></p>', '<p class="col-sm-12 hidden-xs hidden-sm"></p>' %}
