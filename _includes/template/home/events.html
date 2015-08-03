@@ -7,7 +7,7 @@
     <div class="row">
       {% assign events = (site.events | where: 'published', 1 | sort: 'date') %}
       {% for item in events reversed %}
-      <div class="col-sm-4 col-md-3 text-center"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
+      <div class="col-sm-4 text-center"><a class="thumb" href="{{ site.url }}{{ item.url }}" >
         <figure>
           <img class="img-thumbnail" src="{{ site.cdn | replace: '0x0', '300x200'}}{{ item.image }}"/>
         </figure>
