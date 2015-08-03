@@ -109,7 +109,7 @@ $( "#contactForm" ).submit(function( event ) {
 simpleCart({
     checkout: {
         type: "PayPal",
-        email: "badytouray@gmail.com"
+        email: "{{site.paypal}}"
     },
     currency: "GBP",
     cartColumns: [
