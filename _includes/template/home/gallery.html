@@ -1,4 +1,4 @@
-<div class="section" id="gallery">
+<div class="section {% cycle '', 'grey' %}" id="gallery">
   <div class="container">
     <h3 class="h2 page-header">{{ section.title }}</h3>
   {% assign gallery = (site.gallery | where: 'published', 1 | sort: 'order') %}

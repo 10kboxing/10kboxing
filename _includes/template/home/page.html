@@ -1,4 +1,4 @@
-<div class="section" id="{{ section.slug }}">
+<div class="section {% cycle '', 'grey' %}" id="{{ section.slug }}">
   <div class="container">
     {% unless section.title == 'Home' %}<h3 class="h2 page-header">{{ section.title }}</h3>{% endunless %}
     {{ section.content }}

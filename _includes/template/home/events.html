@@ -1,6 +1,6 @@
 {% assign event_count = site.events | where: 'published', 1 | size %}
     {% if event_count > 0 %}
-<div class="section grey" id="{{include.page.slug}}">
+<div class="section {% cycle '', 'grey' %}" id="{{include.page.slug}}">
   <div class="container">
     <h3 class="h2 page-header">{{ section.title }}</h3>
     {{ section.content }}
