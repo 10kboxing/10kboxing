@@ -62,6 +62,9 @@ collections:
     content:
         output: true
         permalink: ':path.html'
+    events:
+        output: true
+        permalink: ':events/:path.html'
     fighters:
         output: true
         permalink: ':path.html'

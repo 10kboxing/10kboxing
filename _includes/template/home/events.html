@@ -1,7 +1,9 @@
-{% assign event_count = (site.events | where: 'published', 1 | size) %}
-<div class="section grey" id="{{ include.page.slug }}">
+{% assign event_count = site.events | where: 'published', 1 | size %}
+{{site.events | where: 'published', 1}}
+<div class="section grey" id="{{include.page.slug}}">
   <div class="container">
     <h3 class="h2 page-header">{{ section.title }}</h3>
+    {{ section.content }}
     {% if event_count > 0 %}
     <div class="row">
       {% assign events = (site.events | where: 'published', 1 | sort: 'date') %}
@@ -12,6 +14,7 @@
         </figure>
 
         {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+        {{ item.date | date: "%d-%m-%Y"}}
       </a><br></div>
       
       {% cycle include.page.app: '', '', '<p class="col-xs-12 visible-sm-block"></p>', '<p class="col-sm-12 hidden-xs hidden-sm"></p>' %}
