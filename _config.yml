@@ -43,6 +43,12 @@ defaults:
     -
         scope:
             path: ''
+            type: events
+        values:
+            layout: event
+    -
+        scope:
+            path: ''
             type: gallery
         values:
             layout: gallery
@@ -64,7 +70,7 @@ collections:
         permalink: ':path.html'
     events:
         output: true
-        permalink: ':events/:path.html'
+        permalink: 'events/:path.html'
     fighters:
         output: true
         permalink: ':path.html'

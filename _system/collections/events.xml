@@ -3,7 +3,10 @@
     <fields>
         <fieldset name="options">
             <field name="date" type="datetime" label="Date" filter="date" class="form-control" admintable="true" />
-            <field name="location" type="itemlist" label="Location" filter="string" app="locations" class="form-control" />
+            <field name="location" type="text" label="Location" filter="string"  class="form-control" />
+            <field name="address" type="text" label="Address" filter="string"  class="form-control" />
+            <field name="postcode" type="text" label="Postcode" filter="string"  class="form-control" />
+            <field name="city" type="text" label="City" filter="string"  class="form-control" />
             <field name="image" type="media" label="Image" filter="string" class="form-control" />
         </fieldset>
         <fieldset name="tickets">
