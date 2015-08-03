@@ -446,3 +446,12 @@ body .don-share {
     background-color: #3f729b;
 }
 
+
+.nobanner {
+    padding-top: 80px;
+}
+@media (min-width:768px) {
+    .nobanner {
+        padding-top: 110px;
+    }
+}
