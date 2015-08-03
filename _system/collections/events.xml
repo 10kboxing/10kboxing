@@ -3,10 +3,6 @@
     <fields>
         <fieldset name="options">
             <field name="date" type="datetime" label="Date" filter="date" class="form-control" admintable="true" />
-            <field name="location" type="text" label="Location" filter="string"  class="form-control" />
-            <field name="address" type="text" label="Address" filter="string"  class="form-control" />
-            <field name="postcode" type="text" label="Postcode" filter="string"  class="form-control" />
-            <field name="city" type="text" label="City" filter="string"  class="form-control" />
             <field name="image" type="media" label="Image" filter="string" class="form-control" />
         </fieldset>
         <fieldset name="tickets">
@@ -14,6 +10,12 @@
                 <field name="name" type="text" label="Ticket Name" filter="string" class="form-control" />
                 <field name="price" type="text" label="Ticket Price" filter="float" class="form-control" />
             </field>
+        </fieldset>
+        <fieldset name="venue">
+            <field name="location" type="text" label="Location" filter="string"  class="form-control" />
+            <field name="address" type="text" label="Address" filter="string"  class="form-control" />
+            <field name="postcode" type="text" label="Postcode" filter="string"  class="form-control" />
+            <field name="city" type="text" label="City" filter="string"  class="form-control" />
         </fieldset>
     </fields>
 </form>
