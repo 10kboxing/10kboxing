@@ -128,6 +128,10 @@ simpleCart({
     ]
 });
 simpleCart.bind( "afterAdd" , function( item ) {
+    $('html,body').animate({
+        scrollTop: $('#basket').offset().top - $('#nav').height()
+    }, 1000);
+    /*
     toastr.success( item.get("name") + " - " + item.get("size") + " was added to the basket." );
     
     setTimeout(function() {
@@ -138,28 +142,15 @@ simpleCart.bind( "afterAdd" , function( item ) {
             "<span class='fa fa-shopping-cart'></span> View basket</a>"
         );
     }, 2000);
+    */
 });
 simpleCart.bind( "update", function(e) {
-    $el = $('.navbar-cart');
-    $btn = $el.find('.btn');
-    $btn.css('transition', '1s ease all');
     if(simpleCart.quantity()) {
         $('.simpleCart_checkout').attr('disabled', false);
-        $el.fadeIn('1000');
-        $btn.addClass('btn-primary');
-        setTimeout(function() {
-            $btn.removeClass('btn-primary');
-        }, 1000);
     }
     else {
         $('.simpleCart_checkout').attr('disabled', true);
-        $('.navbar-cart').fadeOut('slow');
     }
-});
-$('.item_size').on('change', function() {
-    $el = $('.item_size option:selected');
-    $('.item_price span').text($el.data('price'));
-    $('.poster-size').text($el.data('size'));
 });
 function get_cart_count() {
     var quantity = simpleCart.quantity();
