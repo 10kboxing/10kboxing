@@ -1,6 +1,14 @@
+var myhash = window.location.hash.replace('#', '');
+console.log(myhash);
+if ( window.history && window.history.pushState ) { 
+    window.history.pushState('', '', window.location.pathname);
+} else { 
+    window.location.href = window.location.href.replace(/#.*$/, '#'); 
+}
+
 // smooth scroll to anchor
 $(function() {
-  $('a[href*=#]:not([href=#],.carousel-control)').click(function() {
+  $('a[href*=#]:not([href=#],.carousel-control)').click(function(e) {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -106,53 +114,55 @@ $( "#contactForm" ).submit(function( event ) {
         });
 });
 
-simpleCart({
-    checkout: {
-        type: "PayPal",
-        email: "{{site.paypal}}"
-    },
-    currency: "GBP",
-    cartColumns: [
-        { view: function(item, column){
-            return  '<p>' + item.get('name') + '<br>' +
-                    '<a href="javascript:;" class="simpleCart_remove">Remove</a>';
-          }, attr: "name", label: "Name"
-        } ,
-        { attr: "price" , label: "Price", view: 'currency' } ,
-        { view: function(item, column){
-            return  '<a href="javascript:;" class="simpleCart_decrement">-</a> ' +
-                    item.quantity() + ' ' +
-                    '<a href="javascript:;" class="simpleCart_increment">+</a>';
-          }, attr: "custom", label: "Quantity"
+if($('#basket').length > 0) {
+    simpleCart({
+        checkout: {
+            type: "PayPal",
+            email: "{{site.paypal}}"
+        },
+        currency: "GBP",
+        cartColumns: [
+            { view: function(item, column){
+                return  '<p>' + item.get('name') + '<br>' +
+                        '<a href="javascript:;" class="simpleCart_remove">Remove</a>';
+              }, attr: "name", label: "Name"
+            } ,
+            { attr: "price" , label: "Price", view: 'currency' } ,
+            { view: function(item, column){
+                return  '<a href="javascript:;" class="simpleCart_decrement">-</a> ' +
+                        item.quantity() + ' ' +
+                        '<a href="javascript:;" class="simpleCart_increment">+</a>';
+              }, attr: "custom", label: "Quantity"
+            }
+        ]
+    });
+    simpleCart.bind( "afterAdd" , function( item ) {
+        $('html,body').animate({
+            scrollTop: $('#basket').offset().top - $('#nav').height()
+        }, 1000);
+        /*
+        toastr.success( item.get("name") + " - " + item.get("size") + " was added to the basket." );
+        
+        setTimeout(function() {
+            var quantity = simpleCart.quantity();
+            toastr.info( 
+                "Your new sub-total is " + simpleCart.toCurrency( simpleCart.total() ) + " (" + quantity + " item" + (quantity !== 1 ? "s" : "") + "). &nbsp; " +
+                "<a class='btn btn-primary' href='" + $('.navbar-cart a.btn').attr('href') + "'>" +
+                "<span class='fa fa-shopping-cart'></span> View basket</a>"
+            );
+        }, 2000);
+        */
+    });
+    simpleCart.bind( "update", function(e) {
+        if(simpleCart.quantity()) {
+            $('.simpleCart_checkout').attr('disabled', false);
         }
-    ]
-});
-simpleCart.bind( "afterAdd" , function( item ) {
-    $('html,body').animate({
-        scrollTop: $('#basket').offset().top - $('#nav').height()
-    }, 1000);
-    /*
-    toastr.success( item.get("name") + " - " + item.get("size") + " was added to the basket." );
-    
-    setTimeout(function() {
+        else {
+            $('.simpleCart_checkout').attr('disabled', true);
+        }
+    });
+    function get_cart_count() {
         var quantity = simpleCart.quantity();
-        toastr.info( 
-            "Your new sub-total is " + simpleCart.toCurrency( simpleCart.total() ) + " (" + quantity + " item" + (quantity !== 1 ? "s" : "") + "). &nbsp; " +
-            "<a class='btn btn-primary' href='" + $('.navbar-cart a.btn').attr('href') + "'>" +
-            "<span class='fa fa-shopping-cart'></span> View basket</a>"
-        );
-    }, 2000);
-    */
-});
-simpleCart.bind( "update", function(e) {
-    if(simpleCart.quantity()) {
-        $('.simpleCart_checkout').attr('disabled', false);
+        return quantity + " item" + quantity !== 1 ? "s" : "";
     }
-    else {
-        $('.simpleCart_checkout').attr('disabled', true);
-    }
-});
-function get_cart_count() {
-    var quantity = simpleCart.quantity();
-    return quantity + " item" + quantity !== 1 ? "s" : "";
 }
