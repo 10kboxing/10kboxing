@@ -1,18 +1,33 @@
 ---
 layout: default
 ---
-{% include modules/banner.html %}
+<br><br><br><br><br>
 <div class="section" id="content">
   <div class="container">
+    
     <div class="row">
-      <div class="col-sm-8">
-        {{ content | replace_first:'<p>','<p class="lead">' }}
-        
+      <div class="col-sm-7">
+        <div class="media">
+          <div class="pull-left">
+            <a href="#">
+              <img class="media-object" src="{{ site.cdn | replace: '0x0', '0x160'}}{{ page.image }}" alt="">
+            </a>
+          </div>
+          <div class="media-body">
+            <h1 class="h3 media-heading">{{ page.title }}</h1>
+            {{ page.date | date: '%d/%m/%Y %H:%M' }}<br><br>
+            <b>{{ page.venue }}</b><br>
+            {{ page.address }}<br>
+            {{ page.city }} {{ page.postcode }}
+          </div>
+        </div>
+        <hr>
         <table class="table table-striped">
           <thead>
             <tr>
               <th>Ticket</th>
               <th>Price</th>
+              <th>Quantity</th>
               <th></th>
             </tr>
           </thead>
@@ -20,18 +35,29 @@ layout: default
                 {% for ticket in page.tickets %}
                 {% if ticket[1] %}{% assign item = ticket[1] %}{% else %}{% assign item = ticket %}{% endif %}
             <tr class="simpleCart_shelfItem">
-              <td class="item_name"><span class="hidden">{{ page.title }} - {{ page.date }} -</span>{{ item.name }}</td>
+              <td class="item_name"><span class="hidden">{{ page.title }} - {{ page.date | date: '%d/%m' }} - </span>{{ item.name }}</td>
               <td class="item_price">&pound;{{ item.price }}</td>
-              <td><button type="button" class="item_add btn btn-primary"><span class="fa fa-shopping-cart"></span> Add to cart</button></td>
+              <td>
+              <select class="item_Quantity">
+                {% for i in (1...10) %}
+                <option value="{{i}}">{{i}}</option>
+                {% endfor %}
+              </select>
+              </td>
+              <td>
+              <button type="button" class="item_add btn btn-sm btn-primary"><span class="fa fa-shopping-cart"></span> Add to cart</button></td>
             </tr>
                 {% endfor %}
           </tbody>
         </table>
+        <hr>
+        {{ content }}
+        
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"></h3>
+            <h3 class="panel-title">Basket</h3>
           </div>
           <div class="panel-body">
             <div class="simpleCart_items"></div>

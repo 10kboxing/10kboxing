@@ -12,7 +12,7 @@
             </field>
         </fieldset>
         <fieldset name="venue">
-            <field name="location" type="text" label="Location" filter="string"  class="form-control" />
+            <field name="venue" type="text" label="Venue Name" filter="string"  class="form-control" />
             <field name="address" type="text" label="Address" filter="string"  class="form-control" />
             <field name="postcode" type="text" label="Postcode" filter="string"  class="form-control" />
             <field name="city" type="text" label="City" filter="string"  class="form-control" />
