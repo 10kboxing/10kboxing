@@ -1,13 +1,14 @@
 var myhash = window.location.hash;
-if ( window.history && window.history.pushState ) { 
-    window.history.pushState('', '', window.location.pathname);
-} else { 
-    window.location.href = window.location.href.replace(/#.*$/, '#'); 
+if(myhash) {
+    if ( window.history && window.history.pushState ) { 
+        window.history.pushState('', '', window.location.pathname);
+    } else { 
+        window.location.href = window.location.href.replace(/#.*$/, '#'); 
+    }
+    $('html,body').animate({
+      scrollTop: $(myhash).offset().top - $('#nav').height()
+    }, 1000);
 }
-$('html,body').animate({
-  scrollTop: $(myhash).offset().top - $('#nav').height()
-}, 1000);
-
 // smooth scroll to anchor
 $(function() {
   $('a[href*=#]:not([href=#],.carousel-control)').click(function(e) {
