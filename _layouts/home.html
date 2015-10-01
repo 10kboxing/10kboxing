@@ -12,7 +12,7 @@ layout: default
 </div-->
 {% assign sections = (site.content | where: 'published', 1 | sort: 'order') %}
 {% for section in sections %}
-  {% capture layout %}{% if section.layout == 'home' or  section.layout == 'default' %}page{% else %}{{ section.layout }}{% endif %}{% endcapture %}
+  {% capture layout %}{% if section.layout == 'default' %}page{% else %}{{ section.layout }}{% endif %}{% endcapture %}
   {% capture include %}template/home/{{ layout }}.html{% endcapture %}
   {% include {{include}} page=section %}
 {% endfor %}
