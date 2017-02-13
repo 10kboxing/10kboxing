@@ -6,7 +6,7 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-sm-8">{{ content | replace_first:'<p>','<p class="lead">' }}
-      {% if page.video && page.video !== nil %}
+      {% if page.video and page.video !== nil %}
         {% if page.video contains 'v=' %}
           {% assign video = (page.video | split: 'v=') %}
           {% if video[1] contains '&' %}
@@ -80,7 +80,7 @@ layout: default
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Book {{ page.title | split: ' ' | first }}</h3></div>
           <div class="panel-body">
-            <form role="form" action="https://mailer.abemedia.co.uk" method="post" id="contactForm">
+            <form role="form" action="https://forms.abemedia.co.uk" method="post" id="contactForm">
               <input type="hidden" name="subject" value="Book {{ page.title }} (Boxer)">
               <div class="form-group">
                 <label for="name">Name *</label>
