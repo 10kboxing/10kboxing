@@ -1,0 +1,8 @@
+---
+layout: nil
+---
+{% include assets/css/bootstrap.min.css %}
+{% include assets/css/font-awesome.min.css %}
+{% include assets/css/ekko-lightbox.min.css %}
+{% include assets/css/simplecart.css %}
+{% include assets/css/style.css %}
