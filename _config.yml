@@ -1,6 +1,6 @@
 title: '10K Boxing'
 permalink: none
-url: 'http://10kboxing.com'
+url: 'https://10kboxing.com'
 timezone: Europe/London
 exclude:
     - Gemfile
@@ -80,7 +80,7 @@ collections:
     gallery:
         output: true
 description: '10K Boxing'
-v: 4a
+v: 4b
 baseurl: /
 cdn: //cdn.abemedia.co.uk/0x0/10kboxing/
 comments:
