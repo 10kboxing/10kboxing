@@ -80,7 +80,6 @@ collections:
     gallery:
         output: true
 description: '10K Boxing'
-relative_permalinks: 'false'
 v: 4a
 baseurl: /
 cdn: //cdn.abemedia.co.uk/0x0/10kboxing/
